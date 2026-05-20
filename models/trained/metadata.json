@@ -1,0 +1,48 @@
+{
+  "model_version": "1.0.0",
+  "model_type": "RandomForestClassifier",
+  "feature_names": [
+    "protocol_encoded",
+    "packet_size",
+    "normalized_packet_size",
+    "suspicious_large_packet",
+    "is_private_source",
+    "is_private_destination",
+    "risk_score",
+    "connection_direction_enc",
+    "source_port_category_enc",
+    "destination_port_category_enc"
+  ],
+  "categorical_encoders": {
+    "connection_direction": {
+      "external": 0,
+      "inbound": 1,
+      "internal": 2,
+      "outbound": 3
+    },
+    "source_port_category": {
+      "dynamic": 0,
+      "system": 1,
+      "user": 2
+    },
+    "destination_port_category": {
+      "dns": 0,
+      "ftp": 1,
+      "secure_web": 2,
+      "smtp": 3,
+      "ssh": 4,
+      "system": 5,
+      "user": 6,
+      "web": 7
+    }
+  },
+  "threat_classes": [
+    "benign",
+    "dos",
+    "port_scan",
+    "brute_force",
+    "suspicious"
+  ],
+  "training_samples": 2000,
+  "test_accuracy": 1.0
+}
